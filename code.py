@@ -13,9 +13,8 @@ class Load(object):
     Load class is used for exclusive dataframe filtering
     which takes `df` a csv file and convert into dataframe
     """
-    def __init__(self, filename):
+    def __init__(self):
         self.version = open('VERSION').readlines()[0]
-        self.df = pd.read_csv(filename)
         self.data = """W_A11,2000-02,Moving average,59.66666667,50.92582302,
                         68.40751031,Injuries,Number,Assault,Validated,Whole 
                         pop,All ages,FatalW_A11,2001-03,Moving average,60,10,
@@ -152,7 +151,7 @@ class Load(object):
 
 
 
-    def addition(self, x, y):
+    def addition(self,x,y):
         """
         Take X and Y as input and now return the sum of both
 
@@ -168,9 +167,29 @@ class Load(object):
             >> 30
         """
         # complete code here
+        return x+y
+
+    def multiply(self,x,y):
+        """
+        Take X and Y as input and now return the sum of both
+
+        :param      x:    { parameter_description }
+        :type       x:    { type_description }
+        :param      y:    { parameter_description }
+        :type       y:    { type_description }
+
+        Usage:
+        ======
+            >> df = Load('data.csv')
+            >> df.addition(10, 20)
+            >> 30
+        """
+        # complete code here
+        return x*y
 
 
 
 if __name__ == '__main__':
     # instantiate the object
-    df = Load('data.csv')
+    df = Load()
+    print(df.multiply(10,20)) 
